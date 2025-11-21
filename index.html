@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayşegül Güden - Kişisel Web Sitesi</title>
+<style>
+    :root {
+        --primary-color: #f7c8d1;
+        --secondary-color: #ffe4e9;
+        --accent-color: #f9d5e5;
+        --text-color: #333;
+        --background-color: #fff;
+        --box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    body.dark {
+        --primary-color: #2c1a21;
+        --secondary-color: #3a2a33;
+        --accent-color: #5a3c4a;
+        --text-color: #f7c8d1;
+        --background-color: #1e1e1e;
+        --box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        transition: all 0.3s ease;
+    }
+
+    header {
+        background-color: var(--primary-color);
+        padding: 20px;
+        box-shadow: var(--box-shadow);
+        transition: background-color 0.3s;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 28px;
+    }
+
+    .contact-info {
+        margin: 10px 0;
+        font-size: 14px;
+    }
+
+    .contact-info a {
+        color: var(--text-color);
+        text-decoration: none;
+        margin-right: 15px;
+    }
+
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin-right: 15px;
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 600;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .controls {
+        display: inline-block;
+        margin-left: 20px;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 10px;
+        border: 1px solid var(--text-color);
+    }
+
+    main {
+        padding: 30px 20px;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    section {
+        margin-bottom: 40px;
+    }
+
+    section h2 {
+        background-color: var(--accent-color);
+        display: inline-block;
+        padding: 5px 15px;
+        border-radius: 15px;
+    }
+
+    .skills, .certificates, .languages {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .skill, .certificate, .language {
+        background-color: var(--secondary-color);
+        padding: 8px 12px;
+        border-radius: 10px;
+        font-weight: 500;
+        box-shadow: var(--box-shadow);
+    }
+
+    footer {
+        text-align: center;
+        padding: 15px;
+        background-color: var(--primary-color);
+        margin-top: 50px;
+        box-shadow: var(--box-shadow);
+    }
+
+    /* Modern hover effect */
+    .skill:hover, .certificate:hover, .language:hover {
+        transform: translateY(-3px);
+        transition: 0.2s;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Ayşegül Güden</h1>
+    <div class="contact-info">
+        <a href="mailto:aysegulguden09@gmail.com">aysegulguden09@gmail.com</a>
+        <a href="https://github.com/aysegulgdn" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/ayşegül-g" target="_blank">LinkedIn</a>
+        <span class="controls" onclick="toggleDarkMode()">🌙/☀️</span>
+    </div>
+    <nav>
+        <a href="#about" data-lang-key="about">Hakkımda</a>
+        <a href="#education" data-lang-key="education">Eğitim</a>
+        <a href="#skills" data-lang-key="skills">Yetenekler</a>
+        <a href="#certificates" data-lang-key="certificates">Sertifikalar</a>
+        <a href="#languages" data-lang-key="languages">Yabancı Diller</a>
+        <span class="controls" onclick="switchLang()">EN</span>
+    </nav>
+</header>
+
+<main>
+    <section id="about">
+        <h2 data-lang-key="about">Hakkımda</h2>
+        <p data-lang-key="about-text">
+            Ben Ayşegül Güden, Yönetim Bilişim Sistemleri öğrencisiyim ve akademik çalışmalarımı veri analitiği, veri tabanı yönetimi, raporlama ve iş zekâsı konularına yönlendirmekteyim. Özellikle Python, Excel, SQL ve temel istatistiksel analiz yöntemleri üzerine bilgi sahibi olup, bu alanlarda yetkinliğimi artırmaya odaklanıyorum. Öğrenmeye açık bir yapıya sahibim ve teknik becerilerimi güçlendirmek için farklı kaynaklar ve eğitimlerle düzenli olarak çalışıyorum.
+        </p>
+    </section>
+
+    <section id="education">
+        <h2 data-lang-key="education">Eğitim</h2>
+        <p><strong>Dokuz Eylül Üniversitesi - Yönetim Bilişim Sistemleri</strong> (2024 - 2028)</p>
+        <p><strong>Manisa Hasan Türek Anadolu Lisesi</strong> (2020 - 2024)</p>
+    </section>
+
+    <section id="skills">
+        <h2 data-lang-key="skills">Yetenekler</h2>
+        <div class="skills">
+            <div class="skill">Python</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Excel</div>
+            <div class="skill">Power BI</div>
+            <div class="skill">CPM/PERT</div>
+            <div class="skill">Temel SPSS</div>
+        </div>
+    </section>
+
+    <section id="certificates">
+        <h2 data-lang-key="certificates">Sertifikalar</h2>
+        <div class="certificates">
+            <div class="certificate">Excel Pivot Tablolarla Veri Analizi - BTK Akademi</div>
+            <div class="certificate">Uygulamalı Microsoft Power BI - BTK Akademi</div>
+            <div class="certificate">SQL ile Veritabanı Sorgulama - Turkcell</div>
+            <div class="certificate">Python Programlama - Turkcell</div>
+        </div>
+    </section>
+
+    <section id="languages">
+        <h2 data-lang-key="languages">Yabancı Diller</h2>
+        <div class="languages">
+            <div class="language">İngilizce: B1</div>
+            <div class="language">Almanca: A1</div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    &copy; 2025 Ayşegül Güden. Tüm hakları saklıdır.
+</footer>
+
+<script>
+    const translations = {
+        en: {
+            about: "About",
+            about-text: "I am Ayşegül Güden, a student of Management Information Systems, focusing my academic work on data analytics, database management, reporting, and business intelligence. I have knowledge in Python, Excel, SQL, and basic statistical analysis methods and aim to improve my proficiency in these areas. I am eager to learn and regularly work on enhancing my technical skills through various resources and trainings.",
+            education: "Education",
+            skills: "Skills",
+            certificates: "Certificates",
+            languages: "Languages"
+        },
+        tr: {
+            about: "Hakkımda",
+            about-text: "Ben Ayşegül Güden, Yönetim Bilişim Sistemleri öğrencisiyim ve akademik çalışmalarımı veri analitiği, veri tabanı yönetimi, raporlama ve iş zekâsı konularına yönlendirmekteyim. Özellikle Python, Excel, SQL ve temel istatistiksel analiz yöntemleri üzerine bilgi sahibi olup, bu alanlarda yetkinliğimi artırmaya odaklanıyorum. Öğrenmeye açık bir yapıya sahibim ve teknik becerilerimi güçlendirmek için farklı kaynaklar ve eğitimlerle düzenli olarak çalışıyorum.",
+            education: "Eğitim",
+            skills: "Yetenekler",
+            certificates: "Sertifikalar",
+            languages: "Yabancı Diller"
+        }
+    };
+
+    let currentLang = 'tr';
+    function switchLang() {
+        currentLang = currentLang === 'tr' ? 'en' : 'tr';
+        document.querySelectorAll('[data-lang-key]').forEach(el => {
+            const key = el.getAttribute('data-lang-key');
+            el.textContent = translations[currentLang][key];
+        });
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark');
+    }
+</script>
+
+</body>
+</html>
